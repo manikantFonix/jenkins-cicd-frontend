@@ -18,8 +18,13 @@ function App() {
 
   return (
     <div className="app">
-      <h1>Simple Todo List</h1>
-      <p>Deploy-test friendly React app.</p>
+      <div className="header">
+        <div>
+          <p className="eyebrow">Deployment Demo</p>
+          <h1>Today's Plan</h1>
+        </div>
+        <div className="badge">{todos.length} tasks</div>
+      </div>
 
       <form onSubmit={addTodo}>
         <input
@@ -32,12 +37,14 @@ function App() {
 
       <ul>
         {todos.length === 0 ? (
-          <li className="empty">No tasks yet.</li>
+          <li className="empty">No tasks yet. Add one to get started.</li>
         ) : (
           todos.map((todo) => (
             <li key={todo.id}>
               <span>{todo.text}</span>
-              <button onClick={() => removeTodo(todo.id)}>Done</button>
+              <button className="done-btn" onClick={() => removeTodo(todo.id)}>
+                Done
+              </button>
             </li>
           ))
         )}
