@@ -20,7 +20,7 @@ function App() {
     <div className="app">
       <div className="header">
         <div>
-          <p className="eyebrow">Deployment Demo 2</p>
+          <p className="eyebrow">Deployment Demo</p>
           <h1>Today's Plan</h1>
         </div>
         <div className="badge">{todos.length} tasks</div>
